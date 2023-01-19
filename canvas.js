@@ -5,10 +5,8 @@ window.addEventListener("load", () => {
   canvas.height = 600;
   canvas.width = 900;
 
-  let painting = false;
-
   function startPos(e) {
-    context.fillRect(e.clientX - 500, e.clientY - 200, 150, 50);
+    context.fillRect(e.clientX - 500, e.clientY - 200, 150, 50); // creating a rect
   }
 
   canvas.addEventListener("mousedown", startPos);
