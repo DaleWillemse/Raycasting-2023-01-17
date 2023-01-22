@@ -5,9 +5,9 @@ window.addEventListener("load", () => {
   canvas.height = 600;
   canvas.width = 900;
 
-  function startPos(e) {
-    context.fillRect(e.clientX - 500, e.clientY - 200, 150, 50); // creating a rect
-  }
-
-  canvas.addEventListener("mousedown", startPos);
+  const draw = setInterval(function startPos(e) {
+    let x = Math.random() * 800;
+    let y = Math.random() * 500;
+    context.fillRect(x, y, 150, 50); // creating a rect
+  }, 500);
 });
