@@ -1,13 +1,52 @@
-window.addEventListener("load", () => {
-  const canvas = document.querySelector("#canvas");
-  const context = canvas.getContext("2d");
+var lines;
+var light;
 
-  canvas.height = 600;
-  canvas.width = 900;
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  light = new Light(width / 2, height / 2);
+  lines = new Lines();
+}
 
-  const draw = setInterval(function startPos(e) {
-    let x = Math.random() * 800;
-    let y = Math.random() * 500;
-    context.fillRect(x, y, 150, 50); // creating a rect
-  }, 500);
-});
+// function changeLightColor() {
+//   if (keyCode == UP_ARROW) {
+//     let r = Math.floor(random(0, 255));
+//     let g = Math.floor(random(0, 255));
+//     let b = Math.floor(random(0, 255));
+//     light.setColor(r, g, b);
+//   }
+// }
+
+function draw() {
+  background(0);
+
+  light.updatePos(mouseX, mouseY);
+  light.show(lines);
+
+  lines.show();
+}
+
+function mousePressed() {
+  light.setIsActive(false);
+}
+
+function mouseReleased() {
+  light.setIsActive(true);
+  lines.add(-1, -1);
+}
+
+function mouseDragged() {
+  if (mouseX != pmouseX || mouseY != pmouseY) {
+    lines.add(mouseX, mouseY);
+  }
+  return false;
+}
+
+function keyPressed() {
+  if (keyCode == UP_ARROW) {
+    let r = Math.floor(random(0, 255));
+    let g = Math.floor(random(0, 255));
+    let b = Math.floor(random(0, 255));
+    light.setColor(r, g, b);
+  }
+  return false;
+}
