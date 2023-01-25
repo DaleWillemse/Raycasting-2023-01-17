@@ -1,4 +1,3 @@
-// shoot rays to boundries
 class Light {
   constructor(x, y, angleDistance = 0.25) {
     this.centerX = x;
