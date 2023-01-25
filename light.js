@@ -6,7 +6,7 @@ class Light {
     this.angleDistance = angleDistance;
     this.radius = 10;
     this.isActive = true;
-    this.lightColor = color(255, 255, 0);
+    this.lightColor = color(255, 255, 255);
 
     this.rays = new Array();
     for (var i = 0; i < 360; i += 0.25) {
@@ -16,11 +16,11 @@ class Light {
     }
   }
 
-  setColor(r, g, b) {
-    this.lightColor = color(r, g, b);
-    for (let i = 0; i < this.rays.length; i++)
-      this.rays[i].setColor(this.lightColor);
-  }
+  // setColor(r, g, b) {
+  //   this.lightColor = color(r, g, b);
+  //   for (let i = 0; i < this.rays.length; i++)
+  //     this.rays[i].setColor(this.lightColor);
+  // }
 
   setIsActive(flag) {
     this.isActive = flag;
