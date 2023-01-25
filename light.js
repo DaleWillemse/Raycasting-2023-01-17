@@ -16,12 +16,6 @@ class Light {
     }
   }
 
-  // setColor(r, g, b) {
-  //   this.lightColor = color(r, g, b);
-  //   for (let i = 0; i < this.rays.length; i++)
-  //     this.rays[i].setColor(this.lightColor);
-  // }
-
   setIsActive(flag) {
     this.isActive = flag;
   }
