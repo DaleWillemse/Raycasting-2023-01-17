@@ -3,7 +3,7 @@ var light;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  light = new Light(width / 2, height / 2);
+  light = new Light(width, height);
   lines = new Lines();
 }
 
@@ -26,8 +26,5 @@ function mouseReleased() {
 }
 
 function mouseDragged() {
-  if (mouseX != pmouseX || mouseY != pmouseY) {
-    lines.add(mouseX, mouseY);
-  }
-  return false;
+  lines.add(mouseX, mouseY);
 }

@@ -16,7 +16,7 @@ class Lines {
       if (this.x[i + 1] == -1) continue;
       if (this.x[i] == -1) continue;
       stroke(255);
-      strokeWeight(10);
+      strokeWeight(5);
       line(this.x[i], this.y[i], this.x[i + 1], this.y[i + 1]);
     }
   }

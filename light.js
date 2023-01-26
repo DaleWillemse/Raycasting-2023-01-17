@@ -15,8 +15,8 @@ class Light {
     }
   }
 
-  setIsActive(flag) {
-    this.isActive = flag;
+  setIsActive(isActive) {
+    this.isActive = isActive;
   }
 
   updatePos(x, y) {
@@ -30,11 +30,7 @@ class Light {
   show(lines) {
     if (!this.isActive) return;
 
-    fill(this.lightColor);
-    circle(this.centerX, this.centerY, this.radius);
-
     for (let i = 0; i < this.rays.length; i++) {
-      this.rays[i].updatePos(mouseX, mouseY);
       for (let j = 0; j + 1 < lines.length; j++) {
         if (lines.x[j + 1] == -1) continue;
         if (lines.x[j] == -1) continue;

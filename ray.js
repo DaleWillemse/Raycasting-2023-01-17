@@ -3,7 +3,7 @@ class Ray {
     this.startX = x;
     this.startY = y;
     this.theta = theta;
-    this.len = 2 * max(windowWidth, windowHeight);
+    this.len = windowWidth;
     this.isActive = true;
 
     angleMode(DEGREES);
