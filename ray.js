@@ -5,9 +5,7 @@ class Ray {
     this.theta = theta;
     this.len = windowWidth;
     this.isActive = true;
-
-    angleMode(DEGREES);
-    this.endX = this.startX + this.len * cos(this.theta);
+    this.endX = this.startX - this.len * cos(this.theta);
     this.endY = this.startY - this.len * sin(this.theta);
   }
 

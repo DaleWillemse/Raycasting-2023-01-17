@@ -1,9 +1,7 @@
 class Light {
-  constructor(x, y, angleDistance = 0.25) {
+  constructor(x, y) {
     this.centerX = x;
     this.centerY = y;
-    this.angleDistance = angleDistance;
-    this.radius = 10;
     this.isActive = true;
     this.lightColor = color(255, 255, 255);
 
