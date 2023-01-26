@@ -9,8 +9,6 @@ class Ray {
     angleMode(DEGREES);
     this.endX = this.startX + this.len * cos(this.theta);
     this.endY = this.startY - this.len * sin(this.theta);
-
-    this.rayColor = color(255, 255, 0);
   }
 
   setColor(rayColor) {
