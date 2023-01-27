@@ -33,12 +33,14 @@ class Ray {
     let y1 = this.startY;
     let x2 = this.endX;
     let y2 = this.endY;
-    let D = (x1 - x2) * (y3 - y4) - (x3 - x4) * (y1 - y2);
+
+    //Line intersections using Vectors.
+    let denominator = (x1 - x2) * (y3 - y4) - (x3 - x4) * (y1 - y2);
     let t = (x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4);
     let u = (x1 - x3) * (y1 - y2) - (y1 - y3) * (x1 - x2);
-    if (D == 0) return;
-    t /= D;
-    u /= D;
+    if (denominator == 0) return;
+    t /= denominator;
+    u /= denominator;
     if (0 <= u && u <= 1 && 0 <= t && t <= 1) {
       let px = x1 + t * (x2 - x1);
       let py = y1 + t * (y2 - y1);
