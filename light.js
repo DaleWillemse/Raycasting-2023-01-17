@@ -6,7 +6,7 @@ class Light {
     this.lightColor = color(255, 255, 255);
 
     this.rays = new Array();
-    for (var i = 0; i < 360; i += 0.25) {
+    for (var i = 0; i < 360; i += 3) {
       let ray = new Ray(this.centerX, this.centerY, i);
       ray.setColor(this.lightColor);
       this.rays.push(ray);

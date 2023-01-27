@@ -1,12 +1,12 @@
 class Ray {
-  constructor(x, y, theta) {
+  constructor(x, y, angle) {
     this.startX = x;
     this.startY = y;
-    this.theta = theta;
+    this.angle = angle;
     this.len = windowWidth;
     this.isActive = true;
-    this.endX = this.startX - this.len * cos(this.theta);
-    this.endY = this.startY - this.len * sin(this.theta);
+    this.endX = this.startX - this.len * cos(this.angle);
+    this.endY = this.startY - this.len * sin(this.angle);
   }
 
   setColor(rayColor) {
@@ -24,8 +24,8 @@ class Ray {
     this.startX = x;
     this.startY = y;
     angleMode(DEGREES);
-    this.endX = this.startX + this.len * cos(this.theta);
-    this.endY = this.startY - this.len * sin(this.theta);
+    this.endX = this.startX + this.len * cos(this.angle);
+    this.endY = this.startY - this.len * sin(this.angle);
   }
 
   collides(x3, y3, x4, y4) {
@@ -36,16 +36,18 @@ class Ray {
 
     //Line intersections using Vectors.
     let denominator = (x1 - x2) * (y3 - y4) - (x3 - x4) * (y1 - y2);
+    if (denominator == 0) return;
+
     let t = (x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4);
     let u = (x1 - x3) * (y1 - y2) - (y1 - y3) * (x1 - x2);
-    if (denominator == 0) return;
     t /= denominator;
     u /= denominator;
+
     if (0 <= u && u <= 1 && 0 <= t && t <= 1) {
-      let px = x1 + t * (x2 - x1);
-      let py = y1 + t * (y2 - y1);
-      this.endX = px;
-      this.endY = py;
+      let pointX = x1 + t * (x2 - x1);
+      let pointY = y1 + t * (y2 - y1);
+      this.endX = pointX;
+      this.endY = pointY;
     }
   }
 
