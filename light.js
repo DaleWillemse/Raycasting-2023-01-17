@@ -1,3 +1,5 @@
+// Need a class to represent the light source
+
 class Light {
   constructor(x, y) {
     this.centerX = x;
@@ -6,7 +8,7 @@ class Light {
     this.lightColor = color(255, 255, 255);
 
     this.rays = new Array();
-    for (var i = 0; i < 360; i += 3) {
+    for (var i = 0; i < 360; i += 2) {
       let ray = new Ray(this.centerX, this.centerY, i);
       ray.setColor(this.lightColor);
       this.rays.push(ray);

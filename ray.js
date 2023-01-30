@@ -1,3 +1,4 @@
+// Main class for calculating collision and calculating how the rays spread from the light source(mouse pointer).
 class Ray {
   constructor(x, y, angle) {
     this.startX = x;
@@ -5,7 +6,7 @@ class Ray {
     this.angle = angle;
     this.len = windowWidth;
     this.isActive = true;
-    this.endX = this.startX - this.len * cos(this.angle);
+    this.endX = this.startX + this.len * cos(this.angle);
     this.endY = this.startY - this.len * sin(this.angle);
   }
 

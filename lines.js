@@ -1,3 +1,4 @@
+// class for drawing the boundries onto the screen.
 class Lines {
   constructor() {
     this.x = new Array();
@@ -17,7 +18,7 @@ class Lines {
       if (this.x[i] == -1) continue;
       stroke(255);
       strokeWeight(5);
-      line(this.x[i], this.y[i], this.x[i + 1], this.y[i + 1]);
+      line(this.x[i], this.y[i], this.x[i + 1], this.y[i + 1]); // p5 - for drawing a line
     }
   }
 }
